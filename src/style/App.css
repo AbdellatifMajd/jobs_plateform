@@ -1,49 +1,63 @@
-@font-face{
-  font-family: myFont1; 
+:root {
+  --body_bg: #fff;
+  --body_color: #333;
+  --link_color: navy;
+}
+[data-theme="dark"] {
+  --body_bg: #282c34;
+  --body_color: white;
+  --link_color: cyan;
+}
+
+@font-face {
+  font-family: myFont1;
   src: url(/Users/original/Desktop/JOBs/jobs-fonts/Dela.ttf);
 }
 @font-face {
-  font-family: myFont2; 
-  src:url(/Users/original/Desktop/JOBs/jobs-fonts/DM.ttf);
+  font-family: myFont2;
+  src: url(/Users/original/Desktop/JOBs/jobs-fonts/DM.ttf);
 }
-*{
+* {
   list-style: none;
   text-decoration: none;
   padding: 0;
   margin: 0;
-  font-size: 16px; 
+  font-size: 16px;
   font-family: myFont2;
-  
 }
 
-.logo img{
+.logo img {
   width: 170px;
   margin: 20px 50px;
+}
+
+body {
+  background-color: var(--body_bg);
+  color: var(--body_color);
 }
 
 /* *************************************** header  ******************************************/
 
 .container {
-  display: flex; 
+  display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
 nav {
-  display: flex; 
+  display: flex;
   align-items: center;
-  
 }
 
-nav ul{
-  display: flex; 
+nav ul {
+  display: flex;
   justify-content: space-between;
   align-items: center;
 }
-nav ul:first-of-type{
+nav ul:first-of-type {
   transform: translateX(-100px);
 }
-li a{
+li a {
   font-family: myFont1;
   padding: 10px;
   color: #454955;
@@ -53,23 +67,19 @@ li a{
 
 /* *************************************** SearchBar  ******************************************/
 
-
-
 .searchBar {
   width: 100%;
   height: 200px;
   background-color: #454955;
-  
-
 }
 
-.searchBar .content{
+.searchBar .content {
   display: flex;
   align-items: center;
   flex-direction: column;
   transform: translateY(30px);
 }
-.searchBar .content p{
+.searchBar .content p {
   color: #f3eff5;
   font-weight: bold;
   letter-spacing: 3px;
@@ -79,12 +89,11 @@ li a{
   grid-template-columns: 2fr 1fr;
   width: 55%;
   margin-top: 20px;
-
 }
 .searchBar .content input[type="text"] {
   padding: 15px;
   outline-style: none;
-  border:  none;
+  border: none;
 }
 .searchBar .content button {
   padding: 15px;
@@ -95,23 +104,20 @@ li a{
   cursor: pointer;
 }
 
-
-
-
 /* *************************************** Footer  ******************************************/
-.footer{
-  width: 100%; 
-  height: 50px; 
+.footer {
+  width: 100%;
+  height: 50px;
   position: fixed;
   bottom: 0;
-  color: #454955 ;
+  color: #454955;
 }
-.footer hr{
-  padding: 5px 0 0;
-  border-top: #454955 solid ;
+.footer hr {
+  margin: 5px 0;
+  border-top: #454955 solid;
   opacity: 0.3;
 }
-.footer ul{
+.footer ul {
   width: 60%;
   display: flex;
   justify-content: space-between;
@@ -121,7 +127,7 @@ li a{
 .footer ul a {
   color: #0d0a0b;
 }
-.footer select{
+.footer select {
   width: 120px;
   float: right;
   transform: translateY(-20px);

@@ -5,6 +5,19 @@ import { ReactComponent as Moon } from "./Moon.svg";
 import "./DarkMode.css";
 
 const Header = () => {
+  const setDarkMode = () => {
+    document.querySelector("body").setAttribute("data-theme", "dark");
+  };
+  const setLightMode = () => {
+    document.querySelector("body").setAttribute("data-theme", "light");
+  };
+  const toggleTheme = (e) => {
+    if (e.target.checked) {
+      setDarkMode();
+    } else {
+      setLightMode();
+    }
+  };
   return (
     <header className="header">
       <div className="container">
@@ -28,7 +41,7 @@ const Header = () => {
 
           <ul>
             <li>
-              <Link to={"sign-in"}>Sign-in</Link>
+              <Link to={"sign-in"}>Sign in</Link>
             </li>
             <li>
               <Link to={"login"}>Login</Link>
@@ -40,6 +53,7 @@ const Header = () => {
             className="dark_mode_input"
             type="checkbox"
             id="darkmode-toggle"
+            onChange={toggleTheme}
           />
           <label className="dark_mode_label" for="darkmode-toggle">
             <Sun />
