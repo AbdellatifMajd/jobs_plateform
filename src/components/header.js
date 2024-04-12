@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { ReactComponent as Sun } from "./Sun.svg";
-import { ReactComponent as Moon } from "./Moon.svg";
-import "./DarkMode.css";
+import { ReactComponent as Sun } from "./DarkMode/Sun.svg";
+import { ReactComponent as Moon } from "./DarkMode/Moon.svg";
+import "./DarkMode/DarkMode.css";
 
 const Header = () => {
   const setDarkMode = () => {
