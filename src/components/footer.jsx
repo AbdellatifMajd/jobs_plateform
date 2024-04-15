@@ -1,8 +1,8 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 
 export default function Footer() {
   return (
+    
     <div className='footer'>
         <hr />
         <ul>
@@ -17,6 +17,7 @@ export default function Footer() {
             <option value="Français">Français</option>
             <option value="العربية">العربية</option>
         </select>
+        <p>&copy; Job's {new Date().getFullYear()}  . All rights reserved.</p>
     </div>
   )
 }

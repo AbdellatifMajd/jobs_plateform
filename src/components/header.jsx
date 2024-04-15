@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { ReactComponent as Sun } from "./DarkMode/Sun.svg";
 import { ReactComponent as Moon } from "./DarkMode/Moon.svg";
 import "./DarkMode/DarkMode.css";
@@ -18,6 +18,8 @@ const Header = () => {
       setLightMode();
     }
   };
+
+  const location = useLocation();
   return (
     <header className="header">
       <div className="container">
@@ -27,38 +29,66 @@ const Header = () => {
         <nav>
           <ul>
             <li>
-              <Link to="/">Home</Link>
+              <Link
+                to="/"
+                className={`${location.pathname === "/" ? "active" : ""}`}
+              >
+                <i className="fas fa-home"></i>Acceuil
+              </Link>
             </li>
             <li>
-              <Link to="/job-list">Job List</Link>
+              <Link
+                to="/job-list"
+                className={`${
+                  location.pathname === "/job-list" ? "active" : ""
+                }`}
+              >
+                <i className="fas fa-list"></i>Liste des offres
+              </Link>
             </li>
             <li>
-              <a href="">
-                <Link to="/company-reviews">Company-reviews</Link>
-              </a>
-            </li>
-          </ul>
-
-          <ul>
-            <li>
-              <Link to={"sign-in"}>Sign in</Link>
-            </li>
-            <li>
-              <Link to={"login"}>Login</Link>
+              <Link
+                to="/company-reviews"
+                className={`${
+                  location.pathname === "/company-reviews" ? "active" : ""
+                }`}
+              >
+                {" "}
+                <i className="fas fa-star-half-alt"></i> Avis sur les
+                entreprises
+              </Link>
             </li>
           </ul>
         </nav>
-        <div className="dark_mode">
-          <input
-            className="dark_mode_input"
-            type="checkbox"
-            id="darkmode-toggle"
-            onChange={toggleTheme}
-          />
-          <label className="dark_mode_label" for="darkmode-toggle">
-            <Sun />
-            <Moon />
-          </label>
+
+        <div className="sign">
+          <ul>
+            <li>
+              <Link
+                to={"sign-in"}
+                className={`${
+                  location.pathname === "/sign-in" ? "active" : ""
+                }`}
+              >
+                {" "}
+                <i class="fas fa-user "></i>
+                Créer un compte
+              </Link>
+            </li>
+          </ul>
+
+          <div className="dark_mode">
+            <input
+              className="dark_mode_input"
+              type="checkbox"
+              id="darkmode-toggle"
+              onChange={toggleTheme}
+            />
+            <label className="dark_mode_label" for="darkmode-toggle">
+              <Sun />
+              <Moon />
+            </label>
+          </div>
         </div>
       </div>
     </header>
